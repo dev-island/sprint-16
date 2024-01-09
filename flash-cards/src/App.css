@@ -1,0 +1,38 @@
+.card {
+  padding: 2em;
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.space {
+  margin: 0 1em;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+label {
+  font-size: 1.2em;
+  font-weight: 500;
+  display: block;
+  color: #646cff;
+}
+
+input {
+  border: 1px solid #ccc;
+  background-color: #ccc;
+  border-radius: 4px;
+  padding: 0.5em;
+  font-size: 1em;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
