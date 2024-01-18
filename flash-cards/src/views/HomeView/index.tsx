@@ -3,7 +3,6 @@ import { AppView } from "../../context/application/types";
 import Card from "../../components/Card";
 import useAppContext from "../../hooks/useAppContext";
 import styled from "styled-components";
-import styles from './index.module.css';
 
 const HomeView: FC = () => {
   const { setView, currentView, toggleCreateModal } = useAppContext();
@@ -37,7 +36,7 @@ const HomeView: FC = () => {
   ];
 
   return (
-    <div className={styles.container}>
+    <Container>
       {cards.map((card) => (
         <Card key={card.text}>
           <div>
@@ -47,7 +46,7 @@ const HomeView: FC = () => {
           <button onClick={card.onClick}>Go</button>
         </Card>
       ))}
-    </div>
+    </Container>
   );
 };
 

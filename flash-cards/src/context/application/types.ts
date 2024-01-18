@@ -3,6 +3,7 @@ export enum AppView {
   STUDY = "STUDY",
   STATS = "STATS",
   LIST = "LIST",
+  SETTINGS = "SETTINGS",
 }
 
 export type AppState = {

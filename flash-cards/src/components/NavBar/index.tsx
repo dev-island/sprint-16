@@ -29,6 +29,12 @@ const NavBar = () => {
         >
           Stats
         </Button>
+        <Button
+          $isActive={currentView === AppView.SETTINGS ? true : false}
+          onClick={() => setView(AppView.SETTINGS)}
+        >
+          Settings
+        </Button>
       </div>
     </Container>
   );

@@ -7,6 +7,7 @@ import Home from "./views/HomeView";
 import Stats from "./views/StatsView";
 import Study from "./views/StudyView";
 import ListCards from "./views/ListCardsView";
+import Settings from "./views/SettingsView";
 import { AppView } from "./context/application/types";
 import { FC } from "react";
 import CardForm from "./components/CardForm";
@@ -16,6 +17,7 @@ const VIEW_MAP: Record<AppView, FC> = {
   [AppView.STUDY]: Study,
   [AppView.STATS]: Stats,
   [AppView.LIST]: ListCards,
+  [AppView.SETTINGS]: Settings,
 };
 
 function App() {

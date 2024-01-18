@@ -33,3 +33,10 @@
 ![Shopping Cart](./shoppingCart.png)
 Make your own e-commerce website with a cart and deploy it. Bonus: Use Typescript
 
+
+## Thursday
+1. React testing -> implement on Flashcards repo
+2. Styling ->
+   1. Demo all options listed above
+   2. Pick one as a team and implement
+3. React router - intro & if time implement 

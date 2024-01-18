@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from "react";
 import useStudy from "../../hooks/useStudy";
 import styled from "styled-components";
-import styles from './index.module.css';
 
 import Card from "../../components/Card";
 import { FlashCardAnswerValue } from "../../context/flashCards/types";
 import NoCards from "./components/NoCards";
 import Finished from "./components/Finished";
+
 // Where you can study the cards you have created
 const StudyView: FC = () => {
   const {
@@ -55,7 +55,7 @@ const StudyView: FC = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <Container>
       {currentView === "question" ? (
         <Card>
           <CardTitle>{currentCard?.question}</CardTitle>
@@ -78,7 +78,7 @@ const StudyView: FC = () => {
           </CardFooter>
         </Card>
       )}
-    </div>
+    </Container>
   );
 };
 
