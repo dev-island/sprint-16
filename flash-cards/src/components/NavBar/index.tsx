@@ -9,7 +9,7 @@ const NavBar = () => {
     <Container>
       <div>
         {currentView !== AppView.HOME && (
-          <button onClick={() => setView(AppView.HOME)}>Home</button>
+          <button data-testId="home-button" onClick={() => setView(AppView.HOME)}>Home</button>
         )}
       </div>
       <div className="center">

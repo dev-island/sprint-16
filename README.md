@@ -14,6 +14,7 @@
 - CSS in JS
 - Component Libraries
 
+
 ### Client Side Routing
 - [React Router](https://www.theodinproject.com/lessons/node-path-react-new-react-router)
 
@@ -35,8 +36,14 @@ Make your own e-commerce website with a cart and deploy it. Bonus: Use Typescrip
 
 
 ## Thursday
-1. React testing -> implement on Flashcards repo
+1. React testing ->
+   1. Setup in testing demo repo
+   2. Recap of using Jest/ViTest
+   3. RTL demo on Search Component
+   4. Storybook setup & demo on how to use
 2. Styling ->
    1. Demo all options listed above
+      1. Media queries in each version
+         1. e.g in [styled-components](https://www.codevertiser.com/styled-components-media-queries/)
    2. Pick one as a team and implement
-3. React router - intro & if time implement 
+3. React router - intro & if time implement
