@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import useStudy from "../../hooks/useStudy";
 import styled from "styled-components";
+import styles from './index.module.css';
 
 import Card from "../../components/Card";
 import { FlashCardAnswerValue } from "../../context/flashCards/types";
@@ -54,7 +55,7 @@ const StudyView: FC = () => {
   }
 
   return (
-    <Container>
+    <div className={styles.container}>
       {currentView === "question" ? (
         <Card>
           <CardTitle>{currentCard?.question}</CardTitle>
@@ -77,7 +78,7 @@ const StudyView: FC = () => {
           </CardFooter>
         </Card>
       )}
-    </Container>
+    </div>
   );
 };
 

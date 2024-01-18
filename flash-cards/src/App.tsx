@@ -23,13 +23,13 @@ function App() {
 
   const View = VIEW_MAP[currentView] || Unknown;
   return (
-    <>
+    <div>
       <NavBar />
       <CardForm />
       <Content>
         <View />
       </Content>
-    </>
+    </div>
   );
 }
 
