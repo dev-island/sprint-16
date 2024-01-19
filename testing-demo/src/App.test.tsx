@@ -16,6 +16,7 @@ describe("something truthy and falsy", () => {
 describe("App", () => {
   it("renders App component", () => {
     render(<App />);
+    screen.debug();
   })
 
   it("matches the snapshot App component", () => {
@@ -31,7 +32,6 @@ describe("App", () => {
       target: { value: "JavaScript" },
     });
     // Can use "waitFor" to wait for the DOM to update
-    // Or 
     waitFor(() =>
       expect(screen.getByText(/Searches for JavaScript/)).toBeInTheDocument()
     );

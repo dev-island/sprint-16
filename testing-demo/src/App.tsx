@@ -15,7 +15,7 @@ function App() {
         Search:
       </Search>
 
-      <p>Searches for {search ? search : "..."}</p>
+      <p data-testid="search-text">Searches for {search ? search : "..."}</p>
     </div>
   );
 }

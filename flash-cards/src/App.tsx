@@ -11,6 +11,7 @@ import Settings from "./views/SettingsView";
 import { AppView } from "./context/application/types";
 import { FC } from "react";
 import CardForm from "./components/CardForm";
+import styles from './app.module.css';
 
 const VIEW_MAP: Record<AppView, FC> = {
   [AppView.HOME]: Home,
@@ -20,24 +21,43 @@ const VIEW_MAP: Record<AppView, FC> = {
   [AppView.SETTINGS]: Settings,
 };
 
+const screenSizes = {
+  mobile: '(min-width: 768px)',
+  tablet: '(min-width: 1024px)',
+  desktop: '(min-width: 1280px)',
+}
+
 function App() {
   const { currentView } = useAppContext();
 
   const View = VIEW_MAP[currentView] || Unknown;
   return (
-    <div>
+    <Container>
       <NavBar />
       <CardForm />
-      <Content>
+      <Content fullScreen>
         <View />
       </Content>
-    </div>
+    </Container>
   );
 }
 
 export default App;
 
-const Content = styled.div`
+const Container = styled.div`
+
+  background: green;
+
+  @media ${screenSizes.mobile} {
+    background: red;
+  }
+`
+
+const Content = styled.div<{fullScreen?: boolean}>`
   padding: 2rem;
   flex: 1;
+
+  ${({fullScreen}) => fullScreen && `
+    height: 100%;
+  `}
 `;

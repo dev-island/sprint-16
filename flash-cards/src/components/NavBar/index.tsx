@@ -1,12 +1,13 @@
 import { AppView } from "../../context/application/types";
 import useAppContext from "../../hooks/useAppContext";
 import styled from "styled-components";
+import styles from './index.module.css';
 
 const NavBar = () => {
   const { currentView, setView, toggleCreateModal } = useAppContext();
 
   return (
-    <Container>
+    <div className={styles.container}>
       <div>
         {currentView !== AppView.HOME && (
           <button data-testId="home-button" onClick={() => setView(AppView.HOME)}>Home</button>
@@ -36,7 +37,7 @@ const NavBar = () => {
           Settings
         </Button>
       </div>
-    </Container>
+    </div>
   );
 };
 
