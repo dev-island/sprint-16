@@ -4,6 +4,7 @@ import { NamedAPIResource } from "../types";
 import { ROOT } from "../constants";
 import PokemonCard from "../components/PokemonCard";
 import Loading from "../components/Loading";
+import axios from 'axios';
 
 export type Props = {
   viewPokemon: (id: number) => void;
@@ -16,13 +17,26 @@ const PokemonList: FC<Props> = ({
   const [error, setError] = useState<string | null>(null);
   const [pokemon, setPokemon] = useState<NamedAPIResource[]>([]);
 
-  async function fetchPokemon() {
+  // async function fetchPokemon() {
+  //   setLoading(true);
+  //   try {
+  //     const res = await fetch(`${ROOT}pokemon?limit=150`);
+  //     const result = await res.json();
+  //     console.log(result);
+  //     setPokemon(result.results);
+  //   } catch (error) {
+  //     console.log(error);
+  //     setError("Error fetching data");
+  //   }
+  //   setLoading(false);
+  // }
+
+  async function fetchPokemonAxios() {
     setLoading(true);
     try {
-      const res = await fetch(`${ROOT}pokemon?limit=150`);
-      const result = await res.json();
-      console.log(result);
-      setPokemon(result.results);
+      const res = await axios.get(`${ROOT}pokemon?limit=150`);
+      console.log('res', res.data)
+      setPokemon(res.data.results);
     } catch (error) {
       console.log(error);
       setError("Error fetching data");
@@ -31,7 +45,7 @@ const PokemonList: FC<Props> = ({
   }
 
   useEffect(() => {
-    fetchPokemon();
+    fetchPokemonAxios();
   }, []);
 
   if (loading) {

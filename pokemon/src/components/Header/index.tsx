@@ -1,14 +1,14 @@
 import { FC } from "react";
 import { Box, Flex, Image, Button, useColorMode } from "@chakra-ui/react";
 import PokemonLogo from "../../assets/pokemon-logo.svg";
+import { useNavigate } from "react-router-dom";
 
 export type Props = {
   goBack: () => void;
 };
 
-const Header: FC<Props> = ({
-  goBack,
-}) => {
+const Header: FC<Props> = () => {
+  const navigate = useNavigate();
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
@@ -20,7 +20,7 @@ const Header: FC<Props> = ({
       my={8}
       px={4}
     >
-      <Box onClick={goBack}>
+      <Box onClick={() => navigate("/")}>
         <Image
           src={PokemonLogo}
           cursor="pointer"

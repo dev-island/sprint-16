@@ -4,12 +4,10 @@ import { Container, Skeleton, SkeletonText } from "@chakra-ui/react";
 import { Pokemon } from "../types";
 import { ROOT } from "../constants";
 import PokemonDetail from "../components/PokemonDetail";
+import { useParams } from "react-router-dom";
 
-export type Props = {
-  id: number;
-};
-
-const PokemonView: FC<Props> = ({ id }) => {
+const PokemonView: FC = () => {
+  const params = useParams();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [pokemon, setPokemon] = useState<Pokemon>();
@@ -17,9 +15,9 @@ const PokemonView: FC<Props> = ({ id }) => {
   async function fetchPokemon() {
     setLoading(true);
     try {
-      const res = await fetch(`${ROOT}pokemon/${id}`);
+      const res = await fetch(`${ROOT}pokemon/${params.pokemon}`);
       const result = await res.json();
-      console.log(result);
+      // console.log(result);
       setPokemon(result);
     } catch (error) {
       console.log(error);
@@ -42,7 +40,7 @@ const PokemonView: FC<Props> = ({ id }) => {
       </Container>
     );
 
-  if (error) { 
+  if (error) {
     return (
       <Container>
         <p>{error}</p>

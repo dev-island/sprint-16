@@ -1,12 +1,17 @@
 import { FC } from "react";
 import { Card, Text, Image, Center } from "@chakra-ui/react";
+import { Link, useNavigate } from 'react-router-dom';
 export type Props = {
   name: string;
   id: number;
   viewPokemon: (id: number) => void;
 };
 
-const PokemonCard: FC<Props> = ({ name, id, viewPokemon }) => {
+const PokemonCard: FC<Props> = ({ name, id }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/pokemon/${id}`)
+  }
   return (
     <Card
       variant="elevated"
@@ -17,7 +22,7 @@ const PokemonCard: FC<Props> = ({ name, id, viewPokemon }) => {
       _hover={{
         boxShadow: "md",
       }}
-      onClick={() => viewPokemon(id)}
+      onClick={handleClick}
     >
       <Text fontSize="sm" align="right">
         # {id}
